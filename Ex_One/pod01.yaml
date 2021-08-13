@@ -1,0 +1,12 @@
+
+apiVersion: v1        # Version of API used by cluster
+kind: Pod             # Cluster Recource that is being built
+metadata:             # Metadata: here we can define data about the object we are about to create
+  name: exercise-one  # Podname 
+spec:                 # Describes the specific characteristics for Pod
+  containers:
+  - name: exercise-one-container  # Container Name
+    image: exercise-one-image
+    imagePullPolicy: Never        # Makes sure that local images are pulled
+    ports:                        # The port that will be open on container
+    - containerPort: 8888
