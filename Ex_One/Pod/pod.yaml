@@ -6,7 +6,7 @@ metadata:             # Metadata: here we can define data about the object we ar
 spec:                 # Describes the specific characteristics for Pod
   containers:
   - name: exercise-one-container  # Container Name
-    image: exercise-one-image
+    image: nginx:latest
     imagePullPolicy: Never        # Makes sure that local images are pulled
     ports:                        # The port that will be open on container
-    - containerPort: 8888
+    - containerPort: 80

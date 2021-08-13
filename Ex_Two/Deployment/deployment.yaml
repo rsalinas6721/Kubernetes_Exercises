@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orko
+  labels:
+    app: ex-orko
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ex-orko
+  template:
+    metadata:
+      labels:
+        app: ex-orko
+    spec:
+      containers:
+      - name: ex-orko-container
+        image: ex-two-img-one
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skeletor
+  labels:
+    app: ex-skeletor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ex-skeletor
+  template:
+    metadata:
+      labels:
+        app: ex-skeletor
+    spec:
+      containers:
+      - name: ex-skeletor-container
+        image: ex-two-img-two
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
